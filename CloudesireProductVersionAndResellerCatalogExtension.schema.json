@@ -9,11 +9,11 @@
       "type": "integer",
       "description": "The ID of the product version in Cloudesire"
     },
-    "cloudesireResellerCatalog": {
+    "cloudesireResellerCatalogId": {
       "type": "string",
       "description": "The ID of the reseller catalog in Cloudesire"
     }
   },
-  "required": ["cloudesireProductVersionId", "cloudesireResellerCatalog"],
+  "required": ["cloudesireProductVersionId", "cloudesireResellerCatalogId"],
   "additionalProperties": true
 }
