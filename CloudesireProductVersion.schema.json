@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://gist.githubusercontent.com/Sh3rd3n/4116f7a0c11ad11c76359d39c67ff906/raw/0d5e93a55cff3d4cf0595423f39055c7abe5268f/CloudesireProductVersion.schema.json",
+  "$id": "https://github.com/Sh3rd3n/SchemaValidationTest/blob/main/CloudesireProductVersion.schema.json",
   "title": "CloudesireProductVersionExtension",
   "description": "Cloudesire's specific extension fields for TMForum that add the ProductVersion Id",
   "type": "object",
