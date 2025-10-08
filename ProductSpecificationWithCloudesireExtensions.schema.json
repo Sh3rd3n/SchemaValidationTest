@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/Sh3rd3n/SchemaValidationTest/refs/heads/main/ProductSpecificationWithCloudesireExtensions.schema.json",
+  "title": "ProductSpecificationWithCloudesireExtensions",
+  "description": "Extended ProductSpecification that includes Cloudesire-specific fields in nested characteristics",
+  "type": "object",
+  "allOf": [
+    {
+      "type": "object",
+      "properties": {
+        "productSpecCharacteristic": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "cloudesireBillingItemId": {
+                    "type": "string",
+                    "description": "The ID of the Billing Item in Cloudesire"
+                  },
+                  "cloudesireConfigurationParameterId": {
+                    "type": "string",
+                    "description": "The ID of the Configuration Parameter in Cloudesire"
+                  },
+                  "productSpecCharacteristicValue": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "cloudesireBillingItemValueId": {
+                          "type": "string",
+                          "description": "The ID of the Billing Item Value in Cloudesire"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}
+
