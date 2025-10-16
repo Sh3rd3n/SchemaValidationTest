@@ -5,7 +5,7 @@
   "description": "TMForum ProductSpecification extended with Cloudesire-specific properties for integration purposes",
   "anyOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/tmforum-apis/TMF620_ProductCatalog/master/schemas/ProductSpecification.schema.json"
+      "$ref": "https://raw.githubusercontent.com/tmforum-rand/schemas/candidates/Product/ProductSpecification.schema.json"
     },
     {
       "type": "object",
