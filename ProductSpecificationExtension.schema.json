@@ -2,200 +2,26 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "#ProductSpecificationExtension",
   "title": "ProductSpecificationExtension",
-  "description": "TMForum Product Specification schema with DOME extensions",
+  "description": "DOME extensions for TMForum Product Specification",
   "type": "object",
-  "required": ["id", "href", "relatedParty"],
   "properties": {
-    "id": {
-      "type": "string",
-      "description": "Unique identifier of the product specification"
-    },
-    "href": {
-      "type": "string",
-      "description": "Reference to the product specification"
-    },
-    "brand": {
-      "type": "string",
-      "description": "Brand name of the product"
-    },
-    "version": {
-      "type": "string",
-      "default": "1.0",
-      "description": "Version of the product specification"
-    },
-    "description": {
-      "type": "string",
-      "description": "Description of the product specification"
-    },
-    "isBundle": {
-      "type": "boolean",
-      "default": false,
-      "description": "Indicates if this is a bundled specification"
-    },
-    "lastUpdate": {
-      "type": "string",
-      "format": "date-time",
-      "description": "Date and time of the last update"
-    },
-    "lifecycleStatus": {
-      "type": "string",
-      "default": "Launched",
-      "description": "Lifecycle status of the product specification"
-    },
-    "name": {
-      "type": "string",
-      "description": "Name of the product specification"
-    },
-    "productNumber": {
-      "type": "string",
-      "description": "Product number or SKU"
-    },
-    "attachment": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Attachment"
-      },
-      "description": "Attachments associated with the product specification"
-    },
-    "bundledProductSpecification": {
-      "type": "array",
-      "items": {
-        "type": "object"
-      },
-      "description": "Bundled product specifications"
-    },
-    "productSpecCharacteristic": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ProductSpecCharacteristic"
-      },
-      "description": "Characteristics of the product specification"
-    },
-    "productSpecificationRelationship": {
-      "type": "array",
-      "items": {
-        "type": "object"
-      },
-      "description": "Relationships to other product specifications"
-    },
-    "relatedParty": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/RelatedParty"
-      },
-      "description": "Related parties associated with this product specification"
-    },
-    "resourceSpecification": {
-      "type": "array",
-      "items": {
-        "type": "object"
-      },
-      "description": "Resource specifications"
-    },
-    "serviceSpecification": {
-      "type": "array",
-      "items": {
-        "type": "object"
-      },
-      "description": "Service specifications"
-    },
-    "validFor": {
-      "$ref": "#/definitions/ValidFor",
-      "description": "Period during which the specification is valid"
-    },
     "cloudesireProductVersionId": {
       "type": "number",
       "description": "CloudeSire product version identifier"
     },
-    "@schemaLocation": {
-      "type": "string",
-      "description": "Schema location reference"
+    "productSpecCharacteristic": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ProductSpecCharacteristicExtension"
+      },
+      "description": "Product characteristics with DOME extensions"
     }
   },
   "definitions": {
-    "Attachment": {
+    "ProductSpecCharacteristicExtension": {
       "type": "object",
-      "required": ["attachmentType", "name", "url"],
+      "description": "DOME extensions for ProductSpecCharacteristic",
       "properties": {
-        "attachmentType": {
-          "type": "string",
-          "description": "Type of attachment (e.g., document, image, video)"
-        },
-        "name": {
-          "type": "string",
-          "description": "Name of the attachment"
-        },
-        "url": {
-          "type": "string",
-          "description": "URL to access the attachment"
-        }
-      }
-    },
-    "ProductSpecCharacteristicValue": {
-      "type": "object",
-      "required": ["isDefault"],
-      "properties": {
-        "isDefault": {
-          "type": "boolean",
-          "description": "Indicates if this is the default value"
-        },
-        "unitOfMeasure": {
-          "type": "string",
-          "description": "Unit of measure for the value"
-        },
-        "valueFrom": {
-          "type": "number",
-          "description": "Minimum value in a range"
-        },
-        "valueTo": {
-          "type": "number",
-          "description": "Maximum value in a range"
-        },
-        "value": {
-          "oneOf": [
-            { "type": "string" },
-            { "type": "number" },
-            { "type": "boolean" }
-          ],
-          "description": "The characteristic value (can be string, number, or boolean)"
-        },
-        "cloudesireBillingItemValueId": {
-          "type": "string",
-          "description": "CloudeSire billing item value identifier"
-        },
-        "@schemaLocation": {
-          "type": "string",
-          "description": "Schema location reference"
-        }
-      }
-    },
-    "ProductSpecCharacteristic": {
-      "type": "object",
-      "required": ["name", "description", "productSpecCharacteristicValue"],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Unique identifier of the characteristic"
-        },
-        "name": {
-          "type": "string",
-          "description": "Name of the characteristic"
-        },
-        "description": {
-          "type": "string",
-          "description": "Description of the characteristic"
-        },
-        "productSpecCharacteristicValue": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ProductSpecCharacteristicValue"
-          },
-          "description": "Possible values for this characteristic"
-        },
-        "billingItemValue": {
-          "type": "string",
-          "description": "Billing item value reference"
-        },
         "cloudesireBillingItemId": {
           "type": "string",
           "description": "CloudeSire billing item identifier"
@@ -204,62 +30,22 @@
           "type": "string",
           "description": "CloudeSire configuration parameter identifier"
         },
-        "@type": {
-          "type": "string",
-          "description": "Type of the characteristic"
-        },
-        "@schemaLocation": {
-          "type": "string",
-          "description": "Schema location reference"
+        "productSpecCharacteristicValue": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductSpecCharacteristicValueExtension"
+          },
+          "description": "Characteristic values with DOME extensions"
         }
       }
     },
-    "RelatedParty": {
+    "ProductSpecCharacteristicValueExtension": {
       "type": "object",
-      "required": ["id", "href"],
+      "description": "DOME extensions for ProductSpecCharacteristicValue",
       "properties": {
-        "id": {
+        "cloudesireBillingItemValueId": {
           "type": "string",
-          "description": "Unique identifier of the related party"
-        },
-        "href": {
-          "type": "string",
-          "description": "Reference URL to the related party"
-        },
-        "name": {
-          "type": "string",
-          "description": "Name of the related party"
-        },
-        "role": {
-          "type": "string",
-          "description": "Role of the related party"
-        },
-        "@baseType": {
-          "type": "string",
-          "description": "Base type of the related party"
-        },
-        "@schemaLocation": {
-          "type": "string",
-          "description": "Schema location reference"
-        },
-        "@type": {
-          "type": "string",
-          "description": "Type of the related party"
-        },
-        "@referredType": {
-          "type": "string",
-          "description": "Referred type"
-        }
-      }
-    },
-    "ValidFor": {
-      "type": "object",
-      "required": ["startDateTime"],
-      "properties": {
-        "startDateTime": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Start date and time of validity period"
+          "description": "CloudeSire billing item value identifier"
         }
       }
     }
