@@ -2,108 +2,9 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "#ProductOfferingExtension",
   "title": "ProductOfferingExtension",
-  "description": "TMForum Product Offering schema with DOME extensions",
+  "description": "DOME extensions for TMForum Product Offering",
   "type": "object",
-  "required": ["id", "href", "relatedParty"],
   "properties": {
-    "id": {
-      "type": "string",
-      "description": "Unique identifier of the product offering"
-    },
-    "href": {
-      "type": "string",
-      "description": "Reference to the product offering"
-    },
-    "description": {
-      "type": "string",
-      "description": "Description of the product offering"
-    },
-    "isBundle": {
-      "type": "boolean",
-      "default": false,
-      "description": "Indicates if this is a bundled offering"
-    },
-    "lastUpdate": {
-      "type": "string",
-      "format": "date-time",
-      "description": "Date and time of the last update"
-    },
-    "lifecycleStatus": {
-      "type": "string",
-      "default": "Launched",
-      "description": "Lifecycle status of the product offering"
-    },
-    "name": {
-      "type": "string",
-      "description": "Name of the product offering"
-    },
-    "bundledProductOffering": {
-      "type": "array",
-      "items": {
-        "type": "object"
-      },
-      "description": "List of bundled product offerings"
-    },
-    "category": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ReferenceWithName"
-      },
-      "description": "Categories associated with this product offering"
-    },
-    "place": {
-      "type": "array",
-      "items": {
-        "type": "object"
-      },
-      "description": "Places where this offering is available"
-    },
-    "productOfferingPrice": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ReferenceWithName"
-      },
-      "description": "Prices associated with this product offering"
-    },
-    "productOfferingTerm": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ProductOfferingTerm"
-      },
-      "description": "Terms and conditions of the product offering"
-    },
-    "productSpecification": {
-      "type": "object",
-      "required": ["id", "href", "name"],
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "href": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        }
-      },
-      "description": "Product specification reference"
-    },
-    "validFor": {
-      "$ref": "#/definitions/ValidFor",
-      "description": "Period during which the offering is valid"
-    },
-    "version": {
-      "type": "string",
-      "default": "1.0",
-      "description": "Version of the product offering"
-    },
-    "relatedParty": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/RelatedParty"
-      },
-      "description": "Related parties associated with this product offering"
-    },
     "cloudesireProductVersionId": {
       "type": "number",
       "description": "CloudeSire product version identifier"
@@ -112,48 +13,15 @@
       "type": "string",
       "description": "Algorithm used for pricing logic"
     },
-    "@schemaLocation": {
-      "type": "string",
-      "description": "Schema location reference"
+    "relatedParty": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/RelatedParty"
+      },
+      "description": "Related parties associated with this product offering (DOME required)"
     }
   },
   "definitions": {
-    "ProductOfferingTerm": {
-      "type": "object",
-      "required": ["description", "name"],
-      "properties": {
-        "description": {
-          "type": "string",
-          "description": "Description of the term"
-        },
-        "name": {
-          "type": "string",
-          "description": "Name of the term"
-        }
-      }
-    },
-    "ReferenceWithName": {
-      "type": "object",
-      "required": ["id", "href", "name"],
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Unique identifier"
-        },
-        "href": {
-          "type": "string",
-          "description": "Reference URL"
-        },
-        "name": {
-          "type": "string",
-          "description": "Name"
-        },
-        "@baseType": {
-          "type": "string",
-          "description": "Base type reference"
-        }
-      }
-    },
     "RelatedParty": {
       "type": "object",
       "required": ["id", "href"],
@@ -189,17 +57,6 @@
         "@referredType": {
           "type": "string",
           "description": "Referred type"
-        }
-      }
-    },
-    "ValidFor": {
-      "type": "object",
-      "required": ["startDateTime"],
-      "properties": {
-        "startDateTime": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Start date and time of validity period"
         }
       }
     }
