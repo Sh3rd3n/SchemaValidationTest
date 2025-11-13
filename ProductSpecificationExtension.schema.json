@@ -9,6 +9,9 @@
       "type": "number",
       "description": "CloudeSire product version identifier"
     },
+    "relatedParty": {
+      "$ref": "https://raw.githubusercontent.com/DOME-Marketplace/tmf-api/refs/heads/main/schemas/EngagedParty/relatedParty.schema.json"
+    },
     "productSpecCharacteristic": {
       "type": "array",
       "items": {
