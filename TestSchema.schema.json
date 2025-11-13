@@ -21,8 +21,8 @@
           "type": "string",
           "description": "CloudeSire reseller catalog identifier"
         }
-      },
-      "additionalProperties": true
+      }
     }
-  ]
+  ],
+  "unevaluatedProperties": false
 }
