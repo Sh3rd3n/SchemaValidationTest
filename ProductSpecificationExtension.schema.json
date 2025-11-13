@@ -3,23 +3,27 @@
   "$id": "#ProductSpecificationExtension",
   "title": "ProductSpecificationExtension",
   "description": "DOME extensions for TMForum Product Specification",
-  "type": "object",
-  "properties": {
-    "cloudesireProductVersionId": {
-      "type": "number",
-      "description": "CloudeSire product version identifier"
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/DOME-Marketplace/tmf-api/refs/heads/main/DOME/ShareableEntity.schema.json"
     },
-    "relatedParty": {
-      "$ref": "https://raw.githubusercontent.com/DOME-Marketplace/tmf-api/refs/heads/main/schemas/EngagedParty/relatedParty.schema.json"
-    },
-    "productSpecCharacteristic": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ProductSpecCharacteristicExtension"
-      },
-      "description": "Product characteristics with DOME extensions"
+    {
+      "type": "object",
+      "properties": {
+        "cloudesireProductVersionId": {
+          "type": "number",
+          "description": "CloudeSire product version identifier"
+        },
+        "productSpecCharacteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductSpecCharacteristicExtension"
+          },
+          "description": "Product characteristics with DOME extensions"
+        }
+      }
     }
-  },
+  ],
   "definitions": {
     "ProductSpecCharacteristicExtension": {
       "type": "object",
