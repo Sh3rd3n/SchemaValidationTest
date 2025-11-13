@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
   "$id": "#ProductOfferingPriceExtension",
   "title": "ProductOfferingPriceExtension",
   "description": "DOME extensions for TMForum Product Offering Price",
@@ -21,8 +21,8 @@
           "type": "string",
           "description": "CloudeSire reseller catalog identifier"
         }
-      },
-      "additionalProperties": false
+      }
     }
-  ]
+  ],
+  "unevaluatedProperties": false
 }
