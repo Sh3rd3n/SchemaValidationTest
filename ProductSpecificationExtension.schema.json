@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
   "$id": "#ProductSpecificationExtension",
   "title": "ProductSpecificationExtension",
   "description": "DOME extensions for TMForum Product Specification",
@@ -24,10 +24,10 @@
           },
           "description": "Product characteristics with DOME extensions"
         }
-      },
-      "additionalProperties": false
+      }
     }
   ],
+  "unevaluatedProperties": false,
   "definitions": {
     "ProductSpecCharacteristicExtension": {
       "type": "object",
@@ -49,7 +49,7 @@
           "description": "Characteristic values with DOME extensions"
         }
       },
-      "additionalProperties": false
+      "unevaluatedProperties": false
     },
     "ProductSpecCharacteristicValueExtension": {
       "type": "object",
@@ -60,7 +60,7 @@
           "description": "CloudeSire billing item value identifier"
         }
       },
-      "additionalProperties": false
+      "unevaluatedProperties": false
     }
   }
 }
