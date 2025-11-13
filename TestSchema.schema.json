@@ -3,9 +3,11 @@
   "$id": "#TestSchema",
   "title": "TestSchema",
   "description": "DOME extensions for TMForum Objects",
+  "type": "object",
+  "unevaluatedProperties": true,
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/tmforum-rand/schemas/candidates/Product/ProductSpecification.schema.json"
+      "$ref": "https://raw.githubusercontent.com/tmforum-rand/schemas/candidates/Product/ProductSpecification.schema.json#/definitions/ProductSpecification"
     },
     {
       "$ref": "https://raw.githubusercontent.com/DOME-Marketplace/tmf-api/refs/heads/main/DOME/ShareableEntity.schema.json"
