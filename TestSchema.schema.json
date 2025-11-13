@@ -3,25 +3,20 @@
   "$id": "#TestSchema",
   "title": "TestSchema",
   "description": "DOME extensions for TMForum Objects",
-  "allOf": [
-    {
-      "$ref": "https://raw.githubusercontent.com/tmforum-rand/schemas/candidates/Product/ProductOfferingPrice.schema.json"
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "brand": { "type": "string" },
+    "description": { "type": "string" },
+    "productNumber": { "type": "string" },
+    "cloudesireProductVersionId": {
+      "type": "number",
+      "description": "CloudeSire product version identifier"
     },
-    {
-      "$ref": "https://raw.githubusercontent.com/DOME-Marketplace/tmf-api/refs/heads/main/DOME/ShareableEntity.schema.json"
-    },
-    {
-      "type": "object",
-      "properties": {
-        "cloudesireProductVersionId": {
-          "type": "number",
-          "description": "CloudeSire product version identifier"
-        },
-        "cloudesireResellerCatalogId": {
-          "type": "string",
-          "description": "CloudeSire reseller catalog identifier"
-        }
-      }
+    "cloudesireResellerCatalogId": {
+      "type": "string",
+      "description": "CloudeSire reseller catalog identifier"
     }
-  ]
+  },
+  "required": ["name", "productNumber"]
 }
