@@ -21,7 +21,8 @@
           },
           "description": "Product characteristics with DOME extensions"
         }
-      }
+      },
+      "additionalProperties": false
     }
   ],
   "definitions": {
@@ -44,7 +45,8 @@
           },
           "description": "Characteristic values with DOME extensions"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "ProductSpecCharacteristicValueExtension": {
       "type": "object",
@@ -54,7 +56,8 @@
           "type": "string",
           "description": "CloudeSire billing item value identifier"
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }
