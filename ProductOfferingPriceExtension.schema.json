@@ -14,7 +14,7 @@
       "description": "CloudeSire reseller catalog identifier"
     },
     "relatedParty": {
-      "$ref": "https://raw.githubusercontent.com/DOME-Marketplace/dome-odrl-profile/refs/heads/main/schemas/simplified/RelatedPartyRef.schema.json#/properties/relatedParty"
+      "$ref": "https://raw.githubusercontent.com/DOME-Marketplace/tmf-api/refs/heads/main/schemas/EngagedParty/relatedParty.schema.json"
     }
   }
 }
