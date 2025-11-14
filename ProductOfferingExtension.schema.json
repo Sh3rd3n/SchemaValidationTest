@@ -19,6 +19,9 @@
         },
         "pricingLogicAlgorithm": {
           "$ref": "https://raw.githubusercontent.com/DOME-Marketplace/tmf-api/refs/heads/main/schemas/Product/PricingLogicAlgorithm.schema.json"
+        },
+        "relatedParty": {
+          "$ref": "ShareableEntity.schema.json#/properties/relatedParty"
         }
       }
     }
