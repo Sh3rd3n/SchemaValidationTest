@@ -8,6 +8,9 @@
       "$ref": "https://raw.githubusercontent.com/tmforum-rand/schemas/candidates/Product/ProductOffering.schema.json"
     },
     {
+      "$ref": "https://raw.githubusercontent.com/DOME-Marketplace/tmf-api/refs/heads/main/DOME/ShareableEntity.schema.json"
+    },
+    {
       "type": "object",
       "properties": {
         "cloudesireProductVersionId": {
@@ -16,9 +19,6 @@
         },
         "pricingLogicAlgorithm": {
           "$ref": "https://raw.githubusercontent.com/DOME-Marketplace/tmf-api/refs/heads/main/schemas/Product/PricingLogicAlgorithm.schema.json"
-        },
-        "relatedParty": {
-          "$ref": "https://raw.githubusercontent.com/DOME-Marketplace/dome-odrl-profile/refs/heads/main/schemas/simplified/RelatedPartyRef.schema.json"
         }
       }
     }
