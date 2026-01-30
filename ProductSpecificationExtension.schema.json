@@ -1,6 +1,5 @@
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "#ProductSpecificationExtension",
+{                                                                                                                                                                                                                                   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "#ProductSpecificationExtension",                                                                                                                                                                                      
   "title": "ProductSpecificationExtension",
   "description": "DOME extensions for TMForum Product Specification",
   "allOf": [
@@ -14,12 +13,12 @@
           "type": "number",
           "description": "CloudeSire product version identifier"
         },
-        "productSpecCharacteristic": {
+        "productSpecCharacteristic_ext": {
           "type": "array",
+          "description": "Extended characteristics with Cloudesire metadata",
           "items": {
             "$ref": "#/definitions/ProductSpecCharacteristicExtension"
-          },
-          "description": "Product characteristics with DOME extensions"
+          }
         }
       }
     }
@@ -27,32 +26,76 @@
   "definitions": {
     "ProductSpecCharacteristicExtension": {
       "type": "object",
-      "description": "DOME extensions for ProductSpecCharacteristic",
+      "description": "Extended ProductSpecCharacteristic with Cloudesire metadata",
       "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the characteristic"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the characteristic"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the characteristic"
+        },
         "cloudesireBillingItemId": {
           "type": "string",
-          "description": "CloudeSire billing item identifier"
+          "description": "Cloudesire billing item identifier (format: billingItem/{id})"
         },
         "cloudesireConfigurationParameterId": {
           "type": "string",
-          "description": "CloudeSire configuration parameter identifier"
+          "description": "Cloudesire configuration parameter identifier (format: configurationParameter/{id})"
         },
         "productSpecCharacteristicValue": {
           "type": "array",
+          "description": "Values for this characteristic",
           "items": {
             "$ref": "#/definitions/ProductSpecCharacteristicValueExtension"
-          },
-          "description": "Characteristic values with DOME extensions"
+          }
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "description": "Schema location for this characteristic extension"
         }
       }
     },
     "ProductSpecCharacteristicValueExtension": {
       "type": "object",
-      "description": "DOME extensions for ProductSpecCharacteristicValue",
+      "description": "Extended ProductSpecCharacteristicValue with Cloudesire metadata",
       "properties": {
+        "isDefault": {
+          "type": "boolean",
+          "description": "Whether this is the default value"
+        },
+        "unitOfMeasure": {
+          "type": "string",
+          "description": "Unit of measure for the value"
+        },
+        "value": {
+          "description": "The actual value",
+          "oneOf": [
+            { "type": "string" },
+            { "type": "number" },
+            { "type": "boolean" }
+          ]
+        },
+        "valueFrom": {
+          "type": "number",
+          "description": "Start of value range (for tiered pricing)"
+        },
+        "valueTo": {
+          "type": "number",
+          "description": "End of value range (for tiered pricing)"
+        },
         "cloudesireBillingItemValueId": {
           "type": "string",
-          "description": "CloudeSire billing item value identifier"
+          "description": "Cloudesire billing item value identifier (format: billingItemValue/{id})"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "description": "Schema location for this value extension"
         }
       }
     }
